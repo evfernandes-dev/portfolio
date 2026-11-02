@@ -1,3 +1,3 @@
-# Portfólio
+# Portfolio
 
-Meu portfólio pessoal.
+My personal portfolio.
