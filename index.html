@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emanuel Vitor — Desenvolvedor Back-End</title>
+  <meta id="metaDescription" name="description" content="Portfólio de Emanuel Vitor, desenvolvedor back-end em Recife. APIs REST com Java e Spring Boot, ferramentas em Python, automações com n8n e projetos de IA aplicada.">
+  <meta name="author" content="Emanuel Vitor Fernandes Nascimento">
+  <meta id="themeColor" name="theme-color" content="#f4f2ec">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Emanuel Vitor — Desenvolvedor Back-End">
+  <meta property="og:description" content="APIs REST com Java e Spring Boot, ferramentas em Python, automações com n8n e IA aplicada.">
+  <meta property="og:image" content="https://github.com/evfernandes-dev.png?size=480">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("evf-theme");
+        var theme = saved === "light" || saved === "dark"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      } catch (error) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=2026-11-01-chanhdai">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Pular para o conteúdo</a>
+
+  <header class="site-header" id="header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Emanuel Vitor — início">
+        <span class="brand-mark" aria-hidden="true">EV</span>
+        <span class="brand-name">emanuel<span>.dev</span></span>
+      </a>
+
+      <nav class="nav" id="nav" data-i18n-aria="nav.label" aria-label="Navegação principal">
+        <a href="#about" data-i18n="nav.about">Sobre</a>
+        <a href="#skills" data-i18n="nav.skills">Stack</a>
+        <a href="#projects" data-i18n="nav.projects">Projetos</a>
+        <a href="#ai" data-i18n="nav.ai">IA</a>
+        <a href="#contact" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="header-tools">
+        <a class="tool gh-stat" id="ghStat" href="https://github.com/evfernandes-dev" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          <span id="ghHeaderStars">4</span>
+        </a>
+        <button class="tool theme-btn" id="themeToggle" type="button" aria-label="Ativar tema escuro">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="tool lang-btn" id="langToggle" type="button" aria-label="Mudar para inglês">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></svg>
+          <span id="langLabel">EN</span>
+        </button>
+        <button class="tool menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="shell">
+      <section class="hero" id="top">
+        <div class="hero-map-wrap">
+          <span class="map-caption" aria-hidden="true">fig. 01 / request lifecycle</span>
+          <span class="measure measure-width" aria-hidden="true">768</span>
+          <div class="hero-map">
+            <svg class="map-svg" viewBox="0 0 720 300" role="img" aria-label="Mapa do sistema: cliente, API em Java e Spring Boot, MySQL, Ollama e n8n.">
+              <defs>
+                <marker id="map-arrow-main" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 0 8 4 0 8Z"/>
+                </marker>
+                <marker id="map-arrow-side" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 0 8 4 0 8Z"/>
+                </marker>
+              </defs>
+              <g class="map-lines">
+                <path class="map-link map-link-main" d="M146 156H248" marker-end="url(#map-arrow-main)"/>
+                <path class="map-link map-link-main" d="M448 156H546" marker-end="url(#map-arrow-main)"/>
+                <path class="map-link map-link-side" d="M348 92V64H492" marker-end="url(#map-arrow-side)"/>
+                <path class="map-link map-link-side" d="M348 220V250H224" marker-end="url(#map-arrow-side)"/>
+              </g>
+              <g class="map-nodes">
+                <g class="map-node">
+                  <rect class="map-shape" x="24" y="118" width="122" height="76" rx="4"/>
+                  <path class="map-bar" d="M24 134H146"/>
+                  <text x="85" y="156" text-anchor="middle" class="map-title">cliente</text>
+                  <text x="85" y="174" text-anchor="middle" class="map-small">browser</text>
+                </g>
+                <g class="map-node map-node-accent">
+                  <rect class="map-shape" x="248" y="92" width="200" height="128" rx="4"/>
+                  <text x="348" y="148" text-anchor="middle" class="map-title">API</text>
+                  <text x="348" y="168" text-anchor="middle" class="map-small">Java · Spring Boot</text>
+                  <text x="348" y="188" text-anchor="middle" class="map-micro">POST /contas</text>
+                </g>
+                <g class="map-node">
+                  <path class="map-shape" d="M546 128c0-9 15-16 34-16s34 7 34 16v52c0 9-15 16-34 16s-34-7-34-16Z"/>
+                  <ellipse class="map-shape" cx="580" cy="128" rx="34" ry="16"/>
+                  <text x="580" y="164" text-anchor="middle" class="map-title">MySQL</text>
+                  <text x="580" y="182" text-anchor="middle" class="map-small">dados</text>
+                </g>
+                <g class="map-node">
+                  <rect class="map-shape" x="492" y="20" width="160" height="44" rx="4"/>
+                  <text x="572" y="35" text-anchor="middle" class="map-small">LLM local</text>
+                  <text x="572" y="58" text-anchor="middle" class="map-title">Ollama</text>
+                </g>
+                <g class="map-node">
+                  <rect class="map-shape" x="64" y="236" width="160" height="44" rx="4"/>
+                  <text x="144" y="252" text-anchor="middle" class="map-small">automação</text>
+                  <text x="144" y="274" text-anchor="middle" class="map-title">n8n</text>
+                </g>
+              </g>
+              <g class="map-labels">
+                <text x="170" y="146" class="map-micro">request</text>
+                <text x="474" y="146" class="map-micro">query</text>
+                <text x="370" y="54" class="map-micro">prompt</text>
+                <text x="258" y="244" class="map-micro">webhook</text>
+              </g>
+            </svg>
+            <p class="map-foot" aria-hidden="true">cliente → API → dados <span>/</span> automação e LLM local</p>
+          </div>
+        </div>
+
+        <div class="hero-profile">
+          <span class="measure measure-avatar" aria-hidden="true">112</span>
+          <img class="avatar" src="https://github.com/evfernandes-dev.png?size=480" alt="Avatar de Emanuel Vitor" width="480" height="480" loading="eager">
+          <div class="hero-id">
+            <h1>Emanuel Vitor</h1>
+            <p class="hero-role" data-i18n="hero.role">Desenvolvedor back-end</p>
+            <p class="hero-tagline" data-i18n="hero.tagline">APIs REST com Java e Spring Boot, automações com n8n e IA aplicada.</p>
+            <p class="hero-status"><span class="status-dot" aria-hidden="true"></span><span data-i18n="hero.status">Aberto a estágio em back-end</span></p>
+            <a class="hero-cta text-link" href="#projects"><span data-i18n="hero.cta">Ver projetos</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          </div>
+          <div class="hero-links" aria-label="Links de contato">
+            <a class="chip-link" href="https://github.com/evfernandes-dev" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a class="chip-link" href="https://www.linkedin.com/in/emanuel-vitor-fernandes-6a3796421/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a class="chip-link" href="mailto:emanuelvitorfn7@gmail.com">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+              <span data-i18n="link.email">E-mail</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-meta">
+          <div class="meta-row">
+            <svg class="meta-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m4 17 6-6-6-6"/><path d="M12 19h8"/></svg>
+            <div class="meta-copy"><span class="meta-label" data-i18n="meta.role">Função</span><span class="meta-value" data-i18n="meta.roleValue">Desenvolvedor back-end</span></div>
+          </div>
+          <div class="meta-row">
+            <svg class="meta-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <div class="meta-copy"><span class="meta-label" data-i18n="meta.location">Local</span><span class="meta-value"><span data-i18n="meta.locationValue">Recife, Brasil</span> · <time class="local-time" datetime="">--:--</time> <span class="meta-tz">GMT-3</span></span></div>
+          </div>
+          <div class="meta-row">
+            <svg class="meta-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
+            <div class="meta-copy"><span class="meta-label" data-i18n="meta.education">Formação</span><span class="meta-value" data-i18n="meta.educationValue">ADS · Análise e Desenvolvimento de Sistemas</span></div>
+          </div>
+          <div class="meta-row">
+            <svg class="meta-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+            <div class="meta-copy"><span class="meta-label" data-i18n="meta.focus">Foco</span><span class="meta-value" data-i18n="meta.focusValue">APIs REST · Automação · IA aplicada</span></div>
+          </div>
+          <div class="meta-row">
+            <svg class="meta-icon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            <div class="meta-copy"><span class="meta-label" data-i18n="meta.github">GitHub</span><span class="meta-value meta-mono"><span id="statRepos">20</span> <span data-i18n="meta.repos">repositórios</span> · <span id="statFollowers">19</span> <span data-i18n="meta.followers">seguidores</span> · <span id="statStars">4</span> <span data-i18n="meta.stars">estrelas</span></span></div>
+          </div>
+          <div class="meta-row meta-row-email">
+            <svg class="meta-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            <div class="meta-copy"><span class="meta-label" data-i18n="meta.email">E-mail</span><a class="meta-value meta-mono" href="mailto:emanuelvitorfn7@gmail.com">emanuelvitorfn7@gmail.com</a></div>
+            <button class="copy-btn" type="button" data-copy="emanuelvitorfn7@gmail.com" data-i18n-aria="meta.copyEmail" aria-label="Copiar e-mail">
+              <svg class="copy-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+              <svg class="check-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+              <span class="copy-label" data-i18n="meta.copy">Copiar</span>
+            </button>
+            <span class="sr-only" id="copyStatus" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <header class="section-head">
+          <h2 data-i18n="about.title">Sobre</h2>
+          <p class="section-sub" data-i18n="about.sub">Back-end em formação, APIs na prática.</p>
+        </header>
+        <div class="about-body">
+          <div class="about-text">
+            <p data-i18n="about.p1">Sou estudante de Análise e Desenvolvimento de Sistemas em Recife e desenvolvedor back-end em formação. Gosto de entender o problema antes de escrever a primeira linha: estruturo APIs, modelo dados e cuido dos detalhes que fazem o software funcionar no dia a dia.</p>
+            <p data-i18n="about.p2">Tenho experiência prática com Java e Spring Boot na construção de APIs REST, Python para ferramentas desktop e automações com n8n. Também estudo IA aplicada e uso LLMs locais em projetos próprios. Busco um estágio em desenvolvimento para aprender com projetos reais e contribuir com entregas consistentes.</p>
+          </div>
+          <aside class="learning">
+            <h3 data-i18n="about.learning">Estudando agora</h3>
+            <ul>
+              <li data-i18n="about.learning1">Spring Boot avançado</li>
+              <li data-i18n="about.learning2">Arquitetura de APIs</li>
+              <li data-i18n="about.learning3">Testes automatizados</li>
+              <li data-i18n="about.learning4">IA aplicada</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <header class="section-head">
+          <h2 data-i18n="skills.title">Stack</h2>
+          <p class="section-sub" data-i18n="skills.sub">Do back-end à automação: tecnologias que já coloquei em prática.</p>
+        </header>
+        <div class="stack-sheet">
+          <div class="stack-row">
+            <h3 data-i18n="skills.backend.title">Back-end &amp; APIs</h3>
+            <ul class="stack-tech">
+              <li>Java 21</li><li>Spring Boot</li><li>Spring Data JPA</li><li>REST APIs</li><li>Maven</li><li>JUnit · Mockito</li>
+            </ul>
+          </div>
+          <div class="stack-row">
+            <h3 data-i18n="skills.data.title">Dados</h3>
+            <ul class="stack-tech">
+              <li>MySQL</li><li>Oracle</li><li>SQL</li><li>Modelagem relacional</li>
+            </ul>
+          </div>
+          <div class="stack-row">
+            <h3 data-i18n="skills.automation.title">Automação</h3>
+            <ul class="stack-tech">
+              <li>n8n</li><li>Webhooks</li><li>APIs REST</li><li>JSON</li><li>Google Sheets</li><li>Gmail</li>
+            </ul>
+          </div>
+          <div class="stack-row">
+            <h3 data-i18n="skills.tools.title">Ferramentas &amp; IA</h3>
+            <ul class="stack-tech">
+              <li>Git · GitHub</li><li>Docker</li><li>Python</li><li>Ollama</li><li>Claude · OpenAI · Gemini</li><li>GitHub Actions</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="projects-head">
+          <header class="section-head">
+            <h2 data-i18n="projects.title">Projetos</h2>
+            <p class="section-sub" data-i18n="projects.sub">Uma amostra do que venho construindo — do back-end tradicional à IA aplicada.</p>
+          </header>
+          <div class="filters" id="projectFilters" role="group" data-i18n-aria="projects.filterLabel" aria-label="Filtrar projetos">
+            <button class="filter is-active" type="button" data-filter="all" data-i18n="projects.filter.all">Todos</button>
+            <button class="filter" type="button" data-filter="backend" data-i18n="projects.filter.backend">Back-end</button>
+            <button class="filter" type="button" data-filter="automation" data-i18n="projects.filter.automation">Automação</button>
+            <button class="filter" type="button" data-filter="python" data-i18n="projects.filter.python">Python</button>
+            <button class="filter" type="button" data-filter="ai" data-i18n="projects.filter.ai">IA</button>
+          </div>
+        </div>
+        <div class="projects-grid" id="projectsGrid"></div>
+        <div class="projects-list-wrap" id="projectsListWrap" hidden>
+          <h3 class="projects-list-title" data-i18n="projects.more">Outros projetos</h3>
+          <div class="projects-list" id="projectsList"></div>
+        </div>
+        <div class="projects-more">
+          <a class="text-link" href="https://github.com/evfernandes-dev?tab=repositories" target="_blank" rel="noopener">
+            <span data-i18n="projects.viewAll">Ver todos os repositórios</span>
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="ai">
+        <header class="section-head">
+          <h2 data-i18n="ai.title">Pergunte sobre mim</h2>
+          <p class="section-sub" data-i18n="ai.sub">Um assistente que roda 100% no navegador e responde sobre trajetória, stack e projetos.</p>
+        </header>
+        <div class="ai-grid">
+          <div class="ai-chat">
+            <div class="ai-chat-bar">
+              <span class="ai-mark" aria-hidden="true">EV</span>
+              <div class="ai-chat-id">
+                <strong>EV-AI</strong>
+                <small><span data-i18n="ai.status">ativo · local</span></small>
+              </div>
+            </div>
+            <div class="ai-messages" id="aiMessages" aria-live="polite"></div>
+            <div class="ai-chips" id="aiChips"></div>
+            <form class="ai-form" id="aiForm">
+              <label class="sr-only" for="aiInput" data-i18n="ai.placeholder">Pergunte algo sobre mim...</label>
+              <input id="aiInput" name="message" type="text" autocomplete="off" placeholder="Pergunte algo sobre mim..." data-i18n-placeholder="ai.placeholder">
+              <button id="aiSend" type="submit" aria-label="Enviar mensagem" data-i18n-aria="ai.send">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 4 16 8-16 8 4-8-4-8Z"/></svg>
+              </button>
+            </form>
+          </div>
+          <aside class="ai-panel">
+            <h3 data-i18n="ai.panelTitle">Sob o capô</h3>
+            <p class="ai-note" data-i18n="ai.note">As respostas vêm de um roteador de palavras-chave e de textos que eu escrevi. Sem servidor, sem chave de API.</p>
+            <ul class="telemetry">
+              <li><span data-i18n="ai.metric.engine">Motor</span><strong data-i18n="ai.metric.engineValue">palavras-chave</strong></li>
+              <li><span data-i18n="ai.metric.where">Onde roda</span><strong data-i18n="ai.metric.whereValue">no seu navegador</strong></li>
+              <li><span data-i18n="ai.metric.privacy">Dados enviados</span><strong data-i18n="ai.metric.privacyValue">nenhum</strong></li>
+              <li><span data-i18n="ai.metric.languages">Idiomas</span><strong>PT · EN</strong></li>
+            </ul>
+            <p class="ai-note ai-note-foot" data-i18n="ai.noteFoot">Sem histórico salvo: recarregar a página começa a conversa do zero.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="contact-inner">
+          <div class="contact-copy">
+            <h2 data-i18n="contact.title">Me chama</h2>
+            <p data-i18n="contact.text">Estou em busca de estágio em back-end. Se tiver uma vaga, um projeto ou só quiser trocar ideia, me chama.</p>
+          </div>
+          <div class="contact-actions">
+            <div class="contact-email-row">
+              <a class="contact-email" href="mailto:emanuelvitorfn7@gmail.com">emanuelvitorfn7@gmail.com</a>
+              <button class="copy-btn" type="button" data-copy="emanuelvitorfn7@gmail.com" data-i18n-aria="meta.copyEmail" aria-label="Copiar e-mail">
+                <svg class="copy-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+                <svg class="check-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+                <span class="copy-label" data-i18n="meta.copy">Copiar</span>
+              </button>
+            </div>
+            <div class="contact-links">
+              <a href="https://github.com/evfernandes-dev" target="_blank" rel="noopener">
+                <span class="contact-link-label">GitHub</span>
+                <span class="contact-link-value">@evfernandes-dev</span>
+                <svg class="external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/emanuel-vitor-fernandes-6a3796421/" target="_blank" rel="noopener">
+                <span class="contact-link-label">LinkedIn</span>
+                <span class="contact-link-value">Emanuel Vitor Fernandes</span>
+                <svg class="external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+              <div class="contact-location">
+                <span class="contact-link-label" data-i18n="contact.location">Local</span>
+                <span class="contact-link-value"><span data-i18n="meta.locationValue">Recife, Brasil</span> · <time class="local-time" datetime="">--:--</time> <span class="meta-tz">GMT-3</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="hwf-root" id="halftoneFooter"
+    data-wordmark="emanuel"
+    data-dot-gap="6"
+    data-radius="80"
+    data-crop="0.2"
+    data-grain="0.5"
+    data-interactive="true"
+    data-font-weight="700"
+    style="--hwf-height:clamp(500px, 52vw, 560px);">
+    <style>
+      .hwf-root {
+        position: relative;
+        width: 100%;
+        height: var(--hwf-height, 560px);
+        overflow: hidden;
+        isolation: isolate;
+        container-type: inline-size;
+        border-top: 1px solid var(--border);
+        background: var(--hwf-bg);
+        color: var(--hwf-ink);
+        -webkit-font-smoothing: antialiased;
+        --hwf-bg: var(--bg);
+        --hwf-ink: var(--text);
+        --hwf-warm: var(--accent);
+        --hwf-font: var(--font-body);
+        --hwf-mono: var(--font-mono);
+      }
+      .hwf-root canvas {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+      }
+      .hwf-top {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        padding: clamp(22px, 3.4cqw, 40px) clamp(20px, 3.4cqw, 44px) 0;
+        font-family: var(--hwf-mono);
+        font-size: 12px;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        line-height: 1.6;
+      }
+      .hwf-brand strong { display: block; font-weight: 500; color: var(--hwf-ink); }
+      .hwf-brand span { color: var(--muted-2); }
+      .hwf-col h3 { margin: 0; color: var(--muted-2); font: inherit; font-weight: 500; }
+      .hwf-col ul { list-style: none; margin: 0; padding: 0; }
+      .hwf-link, .hwf-up {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        min-width: 24px;
+        color: var(--muted-2);
+        text-decoration: none;
+        background: none;
+        border: 0;
+        padding: 4px 0;
+        font: inherit;
+        letter-spacing: inherit;
+        text-transform: inherit;
+        cursor: pointer;
+        background-image: linear-gradient(currentColor, currentColor);
+        background-size: 0% 1px;
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        transition: color .2s ease, background-size .3s cubic-bezier(.23,1,.32,1);
+      }
+      span.hwf-link { cursor: default; }
+      @media (hover: hover) and (pointer: fine) {
+        a.hwf-link:hover, .hwf-up:hover { color: var(--hwf-ink); background-size: 100% 1px; }
+      }
+      a.hwf-link:focus-visible, .hwf-up:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+        color: var(--hwf-ink);
+      }
+      .hwf-up svg { width: 13px; height: 13px; }
+      .hwf-rule {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 16px;
+        margin: clamp(16px, 2.4cqw, 28px) clamp(20px, 3.4cqw, 44px) 0;
+        padding-top: 12px;
+        border-top: 1px solid var(--border);
+        font-family: var(--hwf-mono);
+        font-size: 12px;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+      .hwf-sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+      @container (max-width: 900px) {
+        .hwf-top {
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          row-gap: 16px;
+        }
+        .hwf-brand { grid-column: 1 / -1; }
+        .hwf-col:last-of-type { grid-column: 1 / -1; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hwf-link, .hwf-up { transition: none; }
+      }
+    </style>
+    <canvas class="hwf-canvas" aria-hidden="true"></canvas>
+    <span class="hwf-sr">emanuel</span>
+    <div class="hwf-top">
+      <div class="hwf-brand">
+        <strong>Emanuel Vitor</strong>
+        <span>©<span id="year">2026</span> · <span data-i18n="footer.metaLocation">Recife / Brasil</span></span>
+      </div>
+      <nav class="hwf-col" data-i18n-aria="footer.work" aria-label="Trabalhos">
+        <h3 data-i18n="footer.work">Trabalhos</h3>
+        <ul>
+          <li><a class="hwf-link" href="#projects" data-i18n="footer.projects">Projetos</a></li>
+          <li><a class="hwf-link" href="https://github.com/evfernandes-dev" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a class="hwf-link" href="https://github.com/evfernandes-dev?tab=repositories" target="_blank" rel="noopener" data-i18n="footer.repos">Repositórios</a></li>
+        </ul>
+      </nav>
+      <nav class="hwf-col" data-i18n-aria="footer.profile" aria-label="Perfil">
+        <h3 data-i18n="footer.profile">Perfil</h3>
+        <ul>
+          <li><a class="hwf-link" href="#about" data-i18n="footer.about">Sobre</a></li>
+          <li><a class="hwf-link" href="#skills" data-i18n="footer.stack">Stack</a></li>
+          <li><a class="hwf-link" href="#ai" data-i18n="footer.ai">IA</a></li>
+        </ul>
+      </nav>
+      <nav class="hwf-col" data-i18n-aria="footer.contact" aria-label="Contato">
+        <h3 data-i18n="footer.contact">Contato</h3>
+        <ul>
+          <li><a class="hwf-link" href="mailto:emanuelvitorfn7@gmail.com">emanuelvitorfn7@gmail.com</a></li>
+          <li><a class="hwf-link" href="https://www.linkedin.com/in/emanuel-vitor-fernandes-6a3796421/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><span class="hwf-link" data-i18n="footer.location">Recife · Brasil</span></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="hwf-rule">
+      <button type="button" class="hwf-up" id="footerTop">
+        <span data-i18n="footer.back">Voltar ao topo</span>
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js?v=2026-11-01-chanhdai" defer></script>
+  <script src="assets/js/app.js?v=2026-11-01-chanhdai" defer></script>
+  <script src="assets/js/halftone-footer.js?v=2026-11-01-chanhdai" defer></script>
+</body>
+</html>
