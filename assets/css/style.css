@@ -535,7 +535,7 @@ main .shell {
   text-align: right;
 }
 
-.map-foot span {
+.map-foot span:not([data-i18n]) {
   padding-inline: 6px;
   color: var(--border-strong);
 }
@@ -616,6 +616,10 @@ main .shell {
 
 .hero-cta {
   margin-top: 12px;
+}
+
+.hero-cv {
+  margin-left: 14px;
 }
 
 .text-link {
@@ -1071,6 +1075,27 @@ main .shell {
   flex-wrap: wrap;
   gap: 4px;
   padding-top: 2px;
+}
+
+.project-links {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 2px;
+}
+
+.contact-cv {
+  margin-top: 14px;
+}
+
+@media (max-width: 640px) {
+  .hero-cv {
+    display: flex;
+    margin-left: 0;
+    margin-top: 8px;
+  }
 }
 
 .project-tags li {

@@ -9,10 +9,10 @@ const AI_ANSWERS = {
   pt: {
     greeting: "Olá! Sou o EV-AI, a versão digital do Emanuel. Posso falar sobre trajetória, stack, projetos com IA e disponibilidade para estágio. O que você quer saber?",
     answers: {
-      about: "Sou o Emanuel Vitor, desenvolvedor back-end em formação em Recife. Estudo Análise e Desenvolvimento de Sistemas e construo APIs REST com Java e Spring Boot, ferramentas em Python e automações com n8n. Este portfólio reúne meus principais projetos.",
-      skills: "Minha stack principal: Java 21, Spring Boot, Spring Data JPA, MySQL, Oracle, Python, Docker, n8n e Git. Também trabalho com FastAPI, LLMs locais via Ollama e integrações com Claude, OpenAI e Gemini.",
-      projects: "Destaco o Estoque IA (agente com LLM local e tool calling), o Xadrez Java (jogo de terminal com modo contra o Ollama), Digital Banking API e Help Desk Pro (Java/Spring + MySQL), IDEON (plataforma educacional com IA) e automações n8n como Shopee Afiliados e Alerta Dólar. Todos estão na seção de projetos.",
-      ai: "Meus projetos com IA: Estoque IA (FastAPI + Ollama + SQLite + Docker), Xadrez Java (jogo de terminal com Ollama), F1 Neural Predictor (Pandas + rede neural), IDEON (IA na educação) e PyMind (aprendizagem ativa com IA). Uso ferramentas como Ollama, Claude, OpenAI e Gemini.",
+      about: "Sou o Emanuel Vitor, estudante de ADS com foco em back-end em Recife. Estudo Análise e Desenvolvimento de Sistemas e construo APIs REST com Java e Spring Boot, ferramentas em Python e automações com n8n. Este portfólio reúne meus principais projetos.",
+      skills: "Minha stack principal: Java, Spring Boot, Spring Data JPA, MySQL, Python, Docker, n8n e Git. Também uso FastAPI, SQLite, LLMs locais via Ollama e Oracle Cloud para hospedar a automação.",
+      projects: "Destaco o Estoque IA (agente com LLM local e tool calling), o Xadrez Java (jogo de terminal com modo contra o Ollama), Digital Banking API e Help Desk Pro (Java/Spring + MySQL), IDEON (projeto de equipe em hackathon) e automações n8n como Shopee Afiliados e Alerta Dólar. Todos estão na seção de projetos.",
+      ai: "Meus projetos com IA: Estoque IA (FastAPI + Ollama + SQLite + Docker), Xadrez Java (jogo de terminal com Ollama), F1 Neural Predictor (Pandas + rede neural), IDEON (projeto de equipe em hackathon) e PyMind (aprendizagem ativa com IA). Uso modelos locais via Ollama.",
       internship: "Sim! Estou em busca de estágio em desenvolvimento de software. Se tiver uma oportunidade, me chama em emanuelvitorfn7@gmail.com ou pelo LinkedIn.",
       contact: "Você pode falar comigo por e-mail (emanuelvitorfn7@gmail.com), LinkedIn ou GitHub. Os links estão na seção de contato, logo abaixo.",
       fallback: "Ainda não sei responder isso. Tente perguntar sobre experiência, stack, projetos com IA ou disponibilidade para estágio."
@@ -27,10 +27,10 @@ const AI_ANSWERS = {
   en: {
     greeting: "Hi! I am EV-AI, Emanuel's digital twin. I can talk about his background, stack, AI projects and internship availability. What do you want to know?",
     answers: {
-      about: "I am Emanuel Vitor, a back-end developer in training based in Recife. I study Systems Analysis and Development and build REST APIs with Java and Spring Boot, Python tools and n8n automations. This portfolio gathers my main projects.",
-      skills: "My core stack: Java 21, Spring Boot, Spring Data JPA, MySQL, Oracle, Python, Docker, n8n and Git. I also work with FastAPI, local LLMs via Ollama and integrations with Claude, OpenAI and Gemini.",
-      projects: "Highlights include Estoque IA (agent with local LLM and tool calling), Xadrez Java (terminal chess game with an Ollama opponent), Digital Banking API and Help Desk Pro (Java/Spring + MySQL), IDEON (AI education platform) and n8n automations like Shopee Affiliates and USD Alert. They are all in the projects section.",
-      ai: "My AI projects: Estoque IA (FastAPI + Ollama + SQLite + Docker), Xadrez Java (terminal chess game with Ollama), F1 Neural Predictor (Pandas + neural network), IDEON (AI in education) and PyMind (active learning with AI). I use tools like Ollama, Claude, OpenAI and Gemini.",
+      about: "I am Emanuel Vitor, an ADS student focused on back-end, based in Recife. I study Systems Analysis and Development and build REST APIs with Java and Spring Boot, Python tools and n8n automations. This portfolio gathers my main projects.",
+      skills: "My core stack: Java, Spring Boot, Spring Data JPA, MySQL, Python, Docker, n8n and Git. I also use FastAPI, SQLite, local LLMs via Ollama and Oracle Cloud to host the automation.",
+      projects: "Highlights include Estoque IA (agent with local LLM and tool calling), Xadrez Java (terminal chess game with an Ollama opponent), Digital Banking API and Help Desk Pro (Java/Spring + MySQL), IDEON (hackathon team project) and n8n automations like Shopee Affiliates and USD Alert. They are all in the projects section.",
+      ai: "My AI projects: Estoque IA (FastAPI + Ollama + SQLite + Docker), Xadrez Java (terminal chess game with Ollama), F1 Neural Predictor (Pandas + neural network), IDEON (hackathon team project) and PyMind (active learning with AI). I use local models via Ollama.",
       internship: "Yes! I am looking for a software development internship. If you have an opening, reach me at emanuelvitorfn7@gmail.com or on LinkedIn.",
       contact: "You can reach me by email (emanuelvitorfn7@gmail.com), LinkedIn or GitHub. The links are in the contact section right below.",
       fallback: "I do not know how to answer that yet. Try asking about background, stack, AI projects or internship availability."
@@ -44,12 +44,16 @@ const AI_ANSWERS = {
   }
 };
 
+// TODO: preencher `demo` e `docs` apenas quando os links existirem; campos vazios não renderizam botões.
 const PROJECTS = [
   {
     name: "Xadrez Java",
     repo: "https://github.com/evfernandes-dev/xadrez-java",
     cat: "ai",
     featured: true,
+    featuredRank: 4,
+    demo: "",
+    docs: "",
     tech: ["Java", "Ollama", "LLM local", "Terminal"],
     desc: {
       pt: "Jogo de xadrez no terminal em Java puro, com regras completas (roque, en passant, promoção e xeque-mate) e modo contra um LLM local via Ollama, com três níveis de dificuldade.",
@@ -61,6 +65,9 @@ const PROJECTS = [
     repo: "https://github.com/evfernandes-dev/estoque-ia",
     cat: "ai",
     featured: true,
+    featuredRank: 1,
+    demo: "",
+    docs: "",
     tech: ["Python", "FastAPI", "Ollama", "SQLite", "Docker"],
     desc: {
       pt: "Agente de IA que consulta, em linguagem natural, o estoque fictício de uma farmácia. Usa FastAPI, LLM local via Ollama com tool calling, SQLite e Docker, com CI no GitHub Actions.",
@@ -72,6 +79,9 @@ const PROJECTS = [
     repo: "https://github.com/evfernandes-dev/digital-banking-api",
     cat: "backend",
     featured: true,
+    featuredRank: 3,
+    demo: "",
+    docs: "",
     tech: ["Java", "Spring Boot", "Spring Data JPA", "MySQL"],
     desc: {
       pt: "API REST para contas bancárias com criação, listagem, saldo, depósito e saque. Inclui validação de entrada, regras de negócio, tratamento centralizado de erros e testes de service e controller.",
@@ -83,6 +93,9 @@ const PROJECTS = [
     repo: "https://github.com/evfernandes-dev/helpdesk-pro",
     cat: "backend",
     featured: true,
+    featuredRank: 2,
+    demo: "",
+    docs: "",
     tech: ["Java 21", "Spring Boot", "MySQL", "Docker", "JUnit"],
     desc: {
       pt: "Sistema de gestão de chamados de help desk: API REST em Java 21 com Spring Boot e MySQL, usando Maven, JUnit, Mockito e ambiente Docker.",
@@ -94,10 +107,13 @@ const PROJECTS = [
     repo: "https://github.com/gabrielalveslopes/IDEON",
     cat: "ai",
     featured: true,
-    tech: ["TypeScript", "Full-stack", "AI", "Hackathon"],
+    featuredRank: 5,
+    demo: "",
+    docs: "",
+    tech: ["TypeScript", "Web app", "AI", "Hackathon"],
     desc: {
-      pt: "Plataforma educacional gamificada criada em hackathon: professores transformam materiais em atividades com IA e alunos acompanham a evolução. O MVP inclui check-in privado de saúde mental.",
-      en: "Gamified education platform built for a hackathon: teachers turn learning materials into AI-assisted activities while students track their progress. The MVP includes a private mental health check-in."
+      pt: "Projeto de equipe em hackathon: plataforma educacional gamificada em que professores transformam materiais em atividades com IA e alunos acompanham a evolução. O MVP inclui check-in privado de saúde mental.",
+      en: "Hackathon team project: a gamified education platform where teachers turn learning materials into AI-assisted activities while students track their progress. The MVP includes a private mental health check-in."
     }
   },
   {
@@ -105,10 +121,10 @@ const PROJECTS = [
     repo: "https://github.com/evfernandes-dev/shopee-afiliados-n8n",
     cat: "automation",
     featured: false,
-    tech: ["n8n", "Webhooks", "REST API", "JSON"],
+    tech: ["n8n", "REST API", "GraphQL", "Telegram", "Docker"],
     desc: {
-      pt: "Workflow no n8n que automatiza a promoção de produtos afiliados da Shopee, integrando webhooks e APIs REST para reduzir o trabalho manual.",
-      en: "n8n workflow that automates Shopee affiliate product promotion, integrating webhooks and REST APIs to cut manual work."
+      pt: "Workflow no n8n que consulta a API de afiliados da Shopee, filtra acessórios de eletrônicos, remove duplicatas e publica ofertas no Telegram a cada 30 minutos.",
+      en: "n8n workflow that queries the Shopee Affiliate API, filters electronics accessories, removes duplicates and publishes offers to Telegram every 30 minutes."
     }
   },
   {

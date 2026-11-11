@@ -3,22 +3,39 @@ const I18N = {
     "a11y.skip": "Pular para o conteúdo",
     "a11y.menu": "Abrir menu",
     "a11y.close": "Fechar menu",
+    "brand.home": "Emanuel Vitor — início",
     "nav.label": "Navegação principal",
     "nav.about": "Sobre",
     "nav.skills": "Stack",
     "nav.projects": "Projetos",
     "nav.ai": "IA",
     "nav.contact": "Contato",
-    "hero.role": "Desenvolvedor back-end",
+    "hero.role": "Estudante de ADS | Back-End",
     "hero.tagline": "APIs REST com Java e Spring Boot, automações com n8n e IA aplicada.",
     "hero.status": "Aberto a estágio em back-end",
     "hero.cta": "Ver projetos",
+    "hero.cv": "Baixar currículo",
+    "hero.linksLabel": "Links de contato",
+    "hero.diagramCaption": "fig. 01 / ciclo de vida da requisição",
+    "hero.mapLabel": "Mapa do sistema: cliente, API em Java e Spring Boot, MySQL, Ollama e n8n.",
+    "map.client": "cliente",
+    "map.browser": "browser",
+    "map.data": "dados",
+    "map.automation": "automação",
+    "map.localLlm": "LLM local",
+    "map.request": "requisição",
+    "map.query": "consulta",
+    "map.prompt": "prompt",
+    "map.webhook": "webhook",
+    "map.footLeft": "cliente → API → dados",
+    "map.footRight": "automação e LLM local",
+    "cv.download": "Baixar currículo",
     "meta.role": "Função",
-    "meta.roleValue": "Desenvolvedor back-end",
+    "meta.roleValue": "Estudante de ADS | Back-End",
     "meta.location": "Local",
     "meta.locationValue": "Recife, Brasil",
     "meta.education": "Formação",
-    "meta.educationValue": "ADS · Análise e Desenvolvimento de Sistemas",
+    "meta.educationValue": "ADS · Estácio · ago/2026 – mai/2029",
     "meta.focus": "Foco",
     "meta.focusValue": "APIs REST · Automação · IA aplicada",
     "meta.github": "GitHub",
@@ -34,10 +51,11 @@ const I18N = {
     "link.email": "E-mail",
     "about.title": "Sobre",
     "about.sub": "Back-end em formação, APIs na prática.",
-    "about.p1": "Sou estudante de Análise e Desenvolvimento de Sistemas em Recife e desenvolvedor back-end em formação. Gosto de entender o problema antes de escrever a primeira linha: estruturo APIs, modelo dados e cuido dos detalhes que fazem o software funcionar no dia a dia.",
+    "about.p1": "Sou estudante de Análise e Desenvolvimento de Sistemas em Recife, com foco em back-end. Gosto de entender o problema antes de escrever a primeira linha: estruturo APIs, modelo dados e cuido dos detalhes que fazem o software funcionar no dia a dia.",
     "about.p2": "Tenho experiência prática com Java e Spring Boot na construção de APIs REST, Python para ferramentas desktop e automações com n8n. Também estudo IA aplicada e uso LLMs locais em projetos próprios. Busco um estágio em desenvolvimento para aprender com projetos reais e contribuir com entregas consistentes.",
+    "about.p3": "Atuo como Assistente de Farmácia na Prefeitura do Recife desde março de 2026, experiência que inspirou projetos como o Estoque IA e a Calculadora de Valproato.",
     "about.learning": "Estudando agora",
-    "about.learning1": "Spring Boot avançado",
+    "about.learning1": "Spring Boot",
     "about.learning2": "Arquitetura de APIs",
     "about.learning3": "Testes automatizados",
     "about.learning4": "IA aplicada",
@@ -45,6 +63,7 @@ const I18N = {
     "skills.sub": "Do back-end à automação: tecnologias que já coloquei em prática.",
     "skills.backend.title": "Back-end & APIs",
     "skills.data.title": "Dados",
+    "skills.data.modeling": "Modelagem relacional",
     "skills.automation.title": "Automação",
     "skills.tools.title": "Ferramentas & IA",
     "projects.title": "Projetos",
@@ -62,6 +81,8 @@ const I18N = {
     "projects.more": "Outros projetos",
     "projects.list": "Projetos",
     "projects.empty": "Nenhum projeto nesta categoria.",
+    "projects.demo": "Demo",
+    "projects.docs": "Swagger/Docs",
     "projects.viewAll": "Ver todos os repositórios",
     "ai.title": "Pergunte sobre mim",
     "ai.sub": "Um assistente que roda 100% no navegador e responde sobre trajetória, stack e projetos.",
@@ -76,11 +97,14 @@ const I18N = {
     "ai.metric.privacy": "Dados enviados",
     "ai.metric.privacyValue": "nenhum",
     "ai.metric.languages": "Idiomas",
+    "ai.metric.languagesValue": "PT · EN",
     "ai.placeholder": "Pergunte algo sobre mim...",
     "ai.send": "Enviar mensagem",
     "contact.title": "Me chama",
     "contact.text": "Estou em busca de estágio em back-end. Se tiver uma vaga, um projeto ou só quiser trocar ideia, me chama.",
     "contact.location": "Local",
+    "lang.toEnglish": "Mudar para inglês",
+    "lang.toPortuguese": "Mudar para português",
     "theme.toDark": "Ativar tema escuro",
     "theme.toLight": "Ativar tema claro",
     "footer.work": "Trabalhos",
@@ -94,29 +118,46 @@ const I18N = {
     "footer.location": "Recife · Brasil",
     "footer.metaLocation": "Recife / Brasil",
     "footer.back": "Voltar ao topo",
-    "meta.title": "Emanuel Vitor — Desenvolvedor Back-End",
-    "meta.description": "Portfólio de Emanuel Vitor, desenvolvedor back-end em Recife. APIs REST com Java e Spring Boot, ferramentas em Python, automações com n8n e projetos de IA aplicada."
+    "meta.title": "Emanuel Vitor — Estudante de ADS | Back-End",
+    "meta.description": "Portfólio de Emanuel Vitor, estudante de ADS com foco em back-end em Recife. APIs REST com Java e Spring Boot, ferramentas em Python, automações com n8n e projetos de IA aplicada."
   },
   en: {
     "a11y.skip": "Skip to content",
     "a11y.menu": "Open menu",
     "a11y.close": "Close menu",
+    "brand.home": "Emanuel Vitor — home",
     "nav.label": "Main navigation",
     "nav.about": "About",
     "nav.skills": "Stack",
     "nav.projects": "Projects",
     "nav.ai": "AI",
     "nav.contact": "Contact",
-    "hero.role": "Back-end developer",
+    "hero.role": "ADS Student | Back-End",
     "hero.tagline": "REST APIs with Java and Spring Boot, n8n automations and applied AI.",
     "hero.status": "Open to back-end internships",
     "hero.cta": "View projects",
+    "hero.cv": "Download CV",
+    "hero.linksLabel": "Contact links",
+    "hero.diagramCaption": "fig. 01 / request lifecycle",
+    "hero.mapLabel": "System map: client, Java and Spring Boot API, MySQL, Ollama and n8n.",
+    "map.client": "client",
+    "map.browser": "browser",
+    "map.data": "data",
+    "map.automation": "automation",
+    "map.localLlm": "local LLM",
+    "map.request": "request",
+    "map.query": "query",
+    "map.prompt": "prompt",
+    "map.webhook": "webhook",
+    "map.footLeft": "client → API → data",
+    "map.footRight": "automation and local LLM",
+    "cv.download": "Download CV",
     "meta.role": "Role",
-    "meta.roleValue": "Back-end developer",
+    "meta.roleValue": "ADS Student | Back-End",
     "meta.location": "Location",
     "meta.locationValue": "Recife, Brazil",
     "meta.education": "Education",
-    "meta.educationValue": "Systems Analysis and Development",
+    "meta.educationValue": "ADS · Estácio · Aug/2026 – May/2029",
     "meta.focus": "Focus",
     "meta.focusValue": "REST APIs · Automation · Applied AI",
     "meta.github": "GitHub",
@@ -132,10 +173,11 @@ const I18N = {
     "link.email": "Email",
     "about.title": "About",
     "about.sub": "Back-end in training, APIs in practice.",
-    "about.p1": "I am a Systems Analysis and Development student in Recife and a back-end developer in training. I like to understand the problem before writing the first line: structuring APIs, modeling data and taking care of the details that make software work every day.",
+    "about.p1": "I am a Systems Analysis and Development student in Recife, focused on back-end. I like to understand the problem before writing the first line: structuring APIs, modeling data and taking care of the details that make software work every day.",
     "about.p2": "I have hands-on experience with Java and Spring Boot building REST APIs, Python for desktop tools and n8n automations. I also study applied AI and use local LLMs in personal projects. I am looking for a development internship to learn from real projects and contribute consistent deliveries.",
+    "about.p3": "I have worked as a Pharmacy Assistant at the Recife City Hall since March 2026, an experience that inspired projects such as Estoque IA and the Valproate Calculator.",
     "about.learning": "Currently learning",
-    "about.learning1": "Advanced Spring Boot",
+    "about.learning1": "Spring Boot",
     "about.learning2": "API architecture",
     "about.learning3": "Automated testing",
     "about.learning4": "Applied AI",
@@ -143,6 +185,7 @@ const I18N = {
     "skills.sub": "From back-end to automation: technologies I have already put into practice.",
     "skills.backend.title": "Back-end & APIs",
     "skills.data.title": "Data",
+    "skills.data.modeling": "Relational modeling",
     "skills.automation.title": "Automation",
     "skills.tools.title": "Tools & AI",
     "projects.title": "Projects",
@@ -160,6 +203,8 @@ const I18N = {
     "projects.more": "Other projects",
     "projects.list": "Projects",
     "projects.empty": "No projects in this category.",
+    "projects.demo": "Demo",
+    "projects.docs": "Swagger/Docs",
     "projects.viewAll": "See all repositories",
     "ai.title": "Ask about me",
     "ai.sub": "An assistant that runs 100% in the browser and answers about my background, stack and projects.",
@@ -174,11 +219,14 @@ const I18N = {
     "ai.metric.privacy": "Data sent",
     "ai.metric.privacyValue": "none",
     "ai.metric.languages": "Languages",
+    "ai.metric.languagesValue": "PT · EN",
     "ai.placeholder": "Ask something about me...",
     "ai.send": "Send message",
     "contact.title": "Get in touch",
     "contact.text": "I am looking for a back-end internship. If you have an opening, a project, or just want to talk tech, reach out.",
     "contact.location": "Location",
+    "lang.toEnglish": "Switch to English",
+    "lang.toPortuguese": "Switch to Portuguese",
     "theme.toDark": "Enable dark theme",
     "theme.toLight": "Enable light theme",
     "footer.work": "Work",
@@ -192,8 +240,8 @@ const I18N = {
     "footer.location": "Recife · Brazil",
     "footer.metaLocation": "Recife / Brazil",
     "footer.back": "Back to top",
-    "meta.title": "Emanuel Vitor — Back-End Developer",
-    "meta.description": "Portfolio of Emanuel Vitor, a back-end developer in Recife. REST APIs with Java and Spring Boot, Python tools, n8n automations and applied AI projects."
+    "meta.title": "Emanuel Vitor — ADS Student | Back-End",
+    "meta.description": "Portfolio of Emanuel Vitor, an ADS student focused on back-end in Recife. REST APIs with Java and Spring Boot, Python tools, n8n automations and applied AI projects."
   }
 };
 
@@ -298,6 +346,14 @@ function applyTheme(theme, persist) {
 function projectCard(project) {
   const tags = project.tech.map((tech) => `<li>${tech}</li>`).join("");
   const category = t(`projects.cat.${project.cat}`);
+  const links = [
+    project.demo
+      ? `<a class="text-link" href="${project.demo}" target="_blank" rel="noopener">${t("projects.demo")}</a>`
+      : "",
+    project.docs
+      ? `<a class="text-link" href="${project.docs}" target="_blank" rel="noopener">${t("projects.docs")}</a>`
+      : ""
+  ].filter(Boolean).join("");
 
   return `
     <article class="project-card" data-cat="${project.cat}">
@@ -306,10 +362,11 @@ function projectCard(project) {
         <span class="project-arrow" aria-hidden="true">${ICONS.arrow}</span>
       </div>
       <div class="project-title-row">
-        <h3><a href="${project.repo}" target="_blank" rel="noopener">${project.name}</a></h3>
+        <h3 translate="no"><a href="${project.repo}" target="_blank" rel="noopener">${project.name}</a></h3>
       </div>
       <p class="project-desc">${project.desc[state.lang]}</p>
-      <ul class="project-tags">${tags}</ul>
+      ${links ? `<div class="project-links">${links}</div>` : ""}
+      <ul class="project-tags" translate="no">${tags}</ul>
     </article>`;
 }
 
@@ -321,10 +378,10 @@ function projectRow(project) {
     <a class="project-row" href="${project.repo}" target="_blank" rel="noopener">
       <span class="project-row-cat">${category}</span>
       <span class="project-row-main">
-        <strong>${project.name}</strong>
+        <strong translate="no">${project.name}</strong>
         <small>${project.desc[state.lang]}</small>
       </span>
-      <span class="project-row-tech">${tech}</span>
+      <span class="project-row-tech" translate="no">${tech}</span>
       <span class="project-row-arrow" aria-hidden="true">${ICONS.arrow}</span>
     </a>`;
 }
@@ -353,7 +410,9 @@ function renderProjects() {
     return;
   }
 
-  const featured = visible.filter((project) => project.featured);
+  const featured = visible
+    .filter((project) => project.featured)
+    .sort((a, b) => (a.featuredRank || 99) - (b.featuredRank || 99));
   const rest = visible.filter((project) => !project.featured);
 
   projectsGrid.innerHTML = featured.map(projectCard).join("");
@@ -665,7 +724,7 @@ function applyLanguage(lang, persist) {
 
   if (langLabel) langLabel.textContent = state.lang === "pt" ? "EN" : "PT";
   if (langToggle) {
-    const label = state.lang === "pt" ? "Mudar para inglês" : "Switch to Portuguese";
+    const label = t(state.lang === "pt" ? "lang.toEnglish" : "lang.toPortuguese");
     langToggle.setAttribute("aria-label", label);
     langToggle.setAttribute("title", label);
   }
