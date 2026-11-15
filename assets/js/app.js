@@ -16,6 +16,7 @@ const I18N = {
     "hero.cta": "Ver projetos",
     "hero.cv": "Baixar currículo",
     "hero.linksLabel": "Links de contato",
+    "hero.avatarAlt": "Avatar de Emanuel Vitor",
     "hero.diagramCaption": "fig. 01 / ciclo de vida da requisição",
     "hero.mapLabel": "Mapa do sistema: cliente, API em Java e Spring Boot, MySQL, Ollama e n8n.",
     "map.client": "cliente",
@@ -132,12 +133,13 @@ const I18N = {
     "nav.projects": "Projects",
     "nav.ai": "AI",
     "nav.contact": "Contact",
-    "hero.role": "ADS Student | Back-End",
+    "hero.role": "Systems Analysis & Development Student | Back-End",
     "hero.tagline": "REST APIs with Java and Spring Boot, n8n automations and applied AI.",
     "hero.status": "Open to back-end internships",
     "hero.cta": "View projects",
     "hero.cv": "Download CV",
     "hero.linksLabel": "Contact links",
+    "hero.avatarAlt": "Emanuel Vitor's avatar",
     "hero.diagramCaption": "fig. 01 / request lifecycle",
     "hero.mapLabel": "System map: client, Java and Spring Boot API, MySQL, Ollama and n8n.",
     "map.client": "client",
@@ -153,11 +155,11 @@ const I18N = {
     "map.footRight": "automation and local LLM",
     "cv.download": "Download CV",
     "meta.role": "Role",
-    "meta.roleValue": "ADS Student | Back-End",
+    "meta.roleValue": "Systems Analysis & Development Student | Back-End",
     "meta.location": "Location",
     "meta.locationValue": "Recife, Brazil",
     "meta.education": "Education",
-    "meta.educationValue": "ADS · Estácio · Aug/2026 – May/2029",
+    "meta.educationValue": "Systems Analysis & Development · Estácio · Aug/2026 – May/2029",
     "meta.focus": "Focus",
     "meta.focusValue": "REST APIs · Automation · Applied AI",
     "meta.github": "GitHub",
@@ -240,8 +242,8 @@ const I18N = {
     "footer.location": "Recife · Brazil",
     "footer.metaLocation": "Recife / Brazil",
     "footer.back": "Back to top",
-    "meta.title": "Emanuel Vitor — ADS Student | Back-End",
-    "meta.description": "Portfolio of Emanuel Vitor, an ADS student focused on back-end in Recife. REST APIs with Java and Spring Boot, Python tools, n8n automations and applied AI projects."
+    "meta.title": "Emanuel Vitor — Systems Analysis & Development Student | Back-End",
+    "meta.description": "Portfolio of Emanuel Vitor, a Systems Analysis and Development student focused on back-end in Recife. REST APIs with Java and Spring Boot, Python tools, n8n automations and applied AI projects."
   }
 };
 
@@ -265,6 +267,8 @@ const projectsList = document.getElementById("projectsList");
 const projectsListWrap = document.getElementById("projectsListWrap");
 const projectsListTitle = document.querySelector(".projects-list-title");
 const metaDescription = document.getElementById("metaDescription");
+const ogTitle = document.getElementById("ogTitle");
+const ogDescription = document.getElementById("ogDescription");
 const themeColor = document.getElementById("themeColor");
 const copyStatus = document.getElementById("copyStatus");
 const aiMessages = document.getElementById("aiMessages");
@@ -298,6 +302,19 @@ function readLang() {
     return localStorage.getItem("evf-lang") === "en" ? "en" : "pt";
   } catch (error) {
     return "pt";
+  }
+}
+
+// Mantém o idioma escolhido também na URL, para o link compartilhado
+// abrir no mesmo idioma e recarregar não voltar para o português.
+function syncLangUrl(lang) {
+  try {
+    const url = new URL(window.location.href);
+    if (url.searchParams.get("lang") === lang) return;
+    url.searchParams.set("lang", lang);
+    window.history.replaceState({}, "", url);
+  } catch (error) {
+    /* URL API unavailable */
   }
 }
 
@@ -709,6 +726,8 @@ function applyLanguage(lang, persist) {
   document.documentElement.lang = state.lang === "pt" ? "pt-BR" : "en";
   document.title = t("meta.title");
   if (metaDescription) metaDescription.setAttribute("content", t("meta.description"));
+  if (ogTitle) ogTitle.setAttribute("content", t("meta.title"));
+  if (ogDescription) ogDescription.setAttribute("content", t("meta.description"));
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     element.textContent = t(element.dataset.i18n);
@@ -716,6 +735,10 @@ function applyLanguage(lang, persist) {
 
   document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
     element.setAttribute("placeholder", t(element.dataset.i18nPlaceholder));
+  });
+
+  document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+    element.setAttribute("alt", t(element.dataset.i18nAlt));
   });
 
   document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
@@ -749,7 +772,10 @@ function applyLanguage(lang, persist) {
   if (aiReady) aiReset();
   updateLocalTime();
   resetCopyState();
-  if (persist) storeLang(state.lang);
+  if (persist) {
+    storeLang(state.lang);
+    syncLangUrl(state.lang);
+  }
 }
 
 function init() {

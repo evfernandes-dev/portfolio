@@ -27,7 +27,7 @@ const AI_ANSWERS = {
   en: {
     greeting: "Hi! I am EV-AI, Emanuel's digital twin. I can talk about his background, stack, AI projects and internship availability. What do you want to know?",
     answers: {
-      about: "I am Emanuel Vitor, an ADS student focused on back-end, based in Recife. I study Systems Analysis and Development and build REST APIs with Java and Spring Boot, Python tools and n8n automations. This portfolio gathers my main projects.",
+      about: "I am Emanuel Vitor, a Systems Analysis and Development student focused on back-end, based in Recife. I build REST APIs with Java and Spring Boot, Python tools and n8n automations. This portfolio gathers my main projects.",
       skills: "My core stack: Java, Spring Boot, Spring Data JPA, MySQL, Python, Docker, n8n and Git. I also use FastAPI, SQLite, local LLMs via Ollama and Oracle Cloud to host the automation.",
       projects: "Highlights include Estoque IA (agent with local LLM and tool calling), Xadrez Java (terminal chess game with an Ollama opponent), Digital Banking API and Help Desk Pro (Java/Spring + MySQL), IDEON (hackathon team project) and n8n automations like Shopee Affiliates and USD Alert. They are all in the projects section.",
       ai: "My AI projects: Estoque IA (FastAPI + Ollama + SQLite + Docker), Xadrez Java (terminal chess game with Ollama), F1 Neural Predictor (Pandas + neural network), IDEON (hackathon team project) and PyMind (active learning with AI). I use local models via Ollama.",
